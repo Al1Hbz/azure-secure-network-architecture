@@ -1,0 +1,9 @@
+# Azure Bicep & ARM temporary output files
+*.json.parameters
+*.publish.json
+.vscode/
+*.local.settings.json
+
+# System files
+.DS_Store
+Thumbs.db
