@@ -2,18 +2,20 @@
 
 A clean and secure Azure VNet setup built with Bicep. This project isolates public web traffic from management and internal storage.
 
-##  What's inside?
-* **Public Traffic:** Internet $\rightarrow$ Application Gateway $\rightarrow$ Azure Firewall $\rightarrow$ Backend VM.
+>  **Note:** You can easily customize variables (such as `location`, naming prefixes, VM sizes, etc.) based on your own environment and requirements.
+
+## What's inside?
+* **Public Traffic:** Internet -> Application Gateway -> Azure Firewall -> Backend VM.
 * **Admin Management:** Direct and secure RDP access using **Azure Bastion** (no public IP on the VM, completely bypassing the firewall).
 * **Storage Security:** The VM talks to the Storage Account safely via a **Private Endpoint**.
 
-##  Components
+## Components
 - `VNet-Prod-01` (`10.0.0.0/16`)
 - Subnets: Firewall, Bastion, Workload, Private Endpoint
 - Core Services: Azure Firewall, Bastion, VM, Private Link
 
-##  Deployment
-To deploy this architecture via Azure CLI, run:
+## Deployment
+To deploy this architecture via Azure CLI / PowerShell, run:
 
 ```powershell
 $adminUsername = "username"
