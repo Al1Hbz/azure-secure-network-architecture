@@ -2,7 +2,7 @@
 
 A clean and secure Azure VNet setup built with Bicep. This project isolates public web traffic from management and internal storage.
 
->  **Note:** You can easily customize variables (such as `location`, naming prefixes, VM sizes, etc.) based on your own environment and requirements.
+> 💡 **Note:** You can easily customize variables (such as `location`, naming prefixes, VM sizes, etc.) based on your own environment and requirements.
 
 ## What's inside?
 * **Public Traffic:** Internet -> Application Gateway -> Azure Firewall -> Backend VM.
