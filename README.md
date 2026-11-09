@@ -11,3 +11,19 @@ A clean and secure Azure VNet setup built with Bicep. This project isolates publ
 - `VNet-Prod-01` (`10.0.0.0/16`)
 - Subnets: Firewall, Bastion, Workload, Private Endpoint
 - Core Services: Azure Firewall, Bastion, VM, Private Link
+
+##  Deployment
+To deploy this architecture via Azure CLI, run:
+
+```powershell
+$adminUsername = "username"
+$securePassword = Read-Host -Prompt "Enter Windows VM Password" -AsSecureString
+
+New-AzResourceGroup -Name "rg-lab-01" -Location "northcentralus"
+
+New-AzResourceGroupDeployment `
+  -ResourceGroupName "rg-lab-01" `
+  -TemplateFile ".\Main.bicep" `
+  -Location "northcentralus" `
+  -adminUsername $adminUsername `
+  -adminPassword $securePassword
